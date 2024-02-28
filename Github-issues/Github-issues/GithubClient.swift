@@ -34,6 +34,13 @@ class GitHubClient {
     // Singleton
     static let sharedInstance = GitHubClient()
     
+    var openIssues: [GitHubIssue] = []
+    var closedIssues: [GitHubIssue] = []
+    
+    var numOfIssues: Int {
+        return openIssues.count + closedIssues.count
+    }
+    
     static let baseUrl = "https://api.github.com/repos/golang/go/"
     static let repoUrl =  "https://github.com/golang/go"
     
@@ -53,6 +60,8 @@ class GitHubClient {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
         let decodedIssues = try decoder.decode([GitHubIssue].self, from: data)
+        openIssues = decodedIssues.filter({ $0.state == "open" })
+        closedIssues = decodedIssues.filter({ $0.state == "closed"})
         return decodedIssues
     }
 }

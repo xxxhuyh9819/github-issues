@@ -10,6 +10,11 @@ import SwiftUI
 struct GithubTabView: View {
     var body: some View {
         TabView {
+            InfoTabView(viewModel: InfoTabViewModel())
+            .tabItem {
+                Text("Info")
+                Image(systemName: "gauge.with.needle")
+            }
             OpenIssueListView()
             .tabItem {
                 Text("Open")
