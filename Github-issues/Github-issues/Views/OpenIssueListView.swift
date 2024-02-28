@@ -18,7 +18,7 @@ struct OpenIssueListView: View {
                 Text("Go To Repository:")
                 Link(destination: URL(string: GitHubClient.repoUrl)!, label: {
                     Image(systemName: "safari")
-                        .foregroundStyle(.red)
+                        .foregroundStyle(.openIssue)
                         .padding(.trailing)
                         .imageScale(.large)
                 })
@@ -38,7 +38,7 @@ struct OpenIssueListView: View {
             .listStyle(GroupedListStyle())
             .navigationTitle("Open")
             .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarBackground(Color.red, for: .navigationBar)
+            .toolbarBackground(Color.openIssue, for: .navigationBar)
             
         }
         .task {

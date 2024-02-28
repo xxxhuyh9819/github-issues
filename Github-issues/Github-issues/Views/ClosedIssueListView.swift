@@ -17,7 +17,7 @@ struct ClosedIssueListView: View {
                 Text("Go To Repository:")
                 Link(destination: URL(string: GitHubClient.repoUrl)!, label: {
                     Image(systemName: "safari")
-                        .foregroundStyle(.green)
+                        .foregroundStyle(.closedIssue)
                         .padding(.trailing)
                         .imageScale(.large)
                 })
@@ -38,7 +38,7 @@ struct ClosedIssueListView: View {
             .listStyle(GroupedListStyle())
             .navigationTitle("Closed")
             .toolbarBackground(.visible, for: .navigationBar)
-            .toolbarBackground(Color.green, for: .navigationBar)
+            .toolbarBackground(Color.closedIssue, for: .navigationBar)
         }
         .task {
             viewModel.getIssues(status: viewModel.status)

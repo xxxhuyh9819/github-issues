@@ -26,6 +26,7 @@ struct GithubTabView: View {
                 Image(systemName: "envelope")
             }
         }
+        .tint(.primary)
     }
 }
 

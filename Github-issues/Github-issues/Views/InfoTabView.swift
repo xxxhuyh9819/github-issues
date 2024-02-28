@@ -26,6 +26,7 @@ struct InfoTabView: View {
                 VStack(alignment: .center) {
                     Label("Open issues", systemImage: "envelope.open.fill")
                         .fontWeight(.bold)
+                        .foregroundStyle(.openIssue)
                         .padding(.bottom, 70)
                     
                     Gauge(value: Double(viewModel.openIssues.count), in: 0...Double(viewModel.numOfIssues)) {
@@ -40,6 +41,7 @@ struct InfoTabView: View {
                     .scaleEffect(3)
                     .gaugeStyle(.accessoryCircular)
                     .padding(.bottom)
+                    .tint(.openIssue)
                 }
                 
                 .padding(.bottom, 32)
@@ -50,6 +52,8 @@ struct InfoTabView: View {
                     Label("Closed issues", systemImage: "envelope.fill")
                         .fontWeight(.bold)
                         .padding(.bottom, 70)
+                        .foregroundStyle(.closedIssue)
+
                     
                     Gauge(value: Double(viewModel.closedIssues.count), in: 0...Double(viewModel.numOfIssues)) {
 
@@ -63,6 +67,7 @@ struct InfoTabView: View {
                     .scaleEffect(3)
                     .gaugeStyle(.accessoryCircular)
                     .padding(.bottom)
+                    .tint(.closedIssue)
                 }
                 
                 .padding(.bottom, 32)

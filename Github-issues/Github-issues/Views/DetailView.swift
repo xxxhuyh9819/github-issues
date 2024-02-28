@@ -46,7 +46,7 @@ struct DetailView: View {
                                         
                     Link(destination: URL(string: issue!.htmlUrl)!, label: {
                         Image(systemName: "safari")
-                            .foregroundStyle(issue?.state == "open" ? .red : .green)
+                            .foregroundStyle(issue?.state == "open" ? .openIssue : .closedIssue)
                             .padding(.trailing)
                             .imageScale(.large)
                     })
@@ -61,8 +61,9 @@ struct DetailView: View {
                         Text(issue?.body ?? "Unknown")
                             .padding()
                     }
-                    .border(issue?.state == "open" ? .red : .green, width: Constants.lineWidth)
                     .clipShape(RoundedRectangle(cornerRadius: 10))
+                    .border(.gray, width: Constants.lineWidth)
+
                 }
                 .padding(.bottom)
                 Spacer()
