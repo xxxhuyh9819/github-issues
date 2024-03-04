@@ -76,7 +76,7 @@
 			children = (
 				50E92E112B74B1E000223D90 /* ReusableViews */,
 				50E92E0C2B74A29E00223D90 /* Info.plist */,
-				50E92E052B7454BF00223D90 /* ViewControllers */,
+				50E92E052B7454BF00223D90 /* ViewModels */,
 				50E92E022B744FCC00223D90 /* Views */,
 				50E92DEA2B7444FD00223D90 /* Github_issuesApp.swift */,
 				50E92E032B74502E00223D90 /* GithubClient.swift */,
@@ -108,13 +108,13 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		50E92E052B7454BF00223D90 /* ViewControllers */ = {
+		50E92E052B7454BF00223D90 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
 				50E92E062B7454D600223D90 /* IssueViewModel.swift */,
 				50344F852B8F087A00549F9D /* InfoTabViewModel.swift */,
 			);
-			path = ViewControllers;
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		50E92E112B74B1E000223D90 /* ReusableViews */ = {
